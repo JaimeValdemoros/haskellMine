@@ -72,7 +72,7 @@ playGame b = do
                                     if (i `elem` ['Y', 'y']) 
                                     then return () else playGame b)
     else let b' = executeKey command b in
-        if (hasLost b') then showGame b' >> putStrLn "Whoops! Hit a mine" >> return ()
-        else if (hasWon b') then showGame b' >> putStrLn "Yay! You won" >> return ()
+        if (hasLost b') then showGame b' >> putStrLn "Whoops! Hit a mine"
+        else if (hasWon b') then showGame b' >> putStrLn "Yay! You won"
         else playGame b'
     
