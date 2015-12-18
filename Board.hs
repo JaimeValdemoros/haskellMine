@@ -110,7 +110,7 @@ clickPos p b = let b' = clickPos' [p] [] b in
     where clickPos' [] _ b = b
           clickPos' (p:ps) done b = 
                 case replace2 f p (table b) of
-                    Nothing -> clickPos' ps done b
+                    Nothing -> clickPos' ps (p:done) b
                     Just t -> let b' = b {table = t} in
                               if nBombs p b' > 0 then clickPos' ps (p:done) b'
                               else clickPos' (ps ++ (surrounding p \\ done)) (p:done) b'
