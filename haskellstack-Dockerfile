@@ -1,0 +1,7 @@
+FROM ubuntu:14.04
+
+RUN sudo apt-key adv --keyserver hkp://keyserver.ubuntu.com:80 --recv-keys 575159689BEFB442
+RUN echo 'deb http://download.fpcomplete.com/ubuntu trusty main'| tee /etc/apt/sources.list.d/fpco.list
+RUN apt-get update && apt-get install -y haskell-platform stack
+RUN apt-get install -y libncurses5-dev
+RUN echo "export LC_ALL=C.UTF-8" > /home/.bashrc
