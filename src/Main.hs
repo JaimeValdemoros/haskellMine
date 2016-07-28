@@ -15,6 +15,7 @@ question :: String -> String -> String
 question q def = q ++ " do you want? (Default=" ++ def ++ ")"
 
 main = do
+    clearScreen
     setTitle "Minesweeper!"
     g <- getStdGen
     putStrLn "Welcome!"
